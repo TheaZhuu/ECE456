@@ -1,0 +1,38 @@
+Aim:
+
+The goal of this assignment is to use the concepts of socket programming with TCP. 
+You will  create a client module and a server module  that allows a user to transfer a file from the  client node to the server.
+
+ 
+
+Description:
+
+Capture.PNGSockets facilitate communication  between nodes. TCP  in particular provides reliable stream transfer. 
+Unlike UDP, it requires connection setup  and closing.  Create a client-server system to carry out the transfer of a file from client to the server. 
+The client should accept input filename from the user at the client node, establish a connection with the server and send the file to the server in chunks. 
+The server accepts these chunks and creates a copy at the server node.
+
+
+Procedure:
+
+You need to implement 2 programs ( modules), the client and the server:
+
+Client:
+
+Accept the server IP address (and port) and the filename from the user.
+Read 'X' bytes of data
+Send the 'X' bytes of data read to the server
+Repeat 2 through 4 until end of file
+
+ Inform the user whether the file transfer was successful, and close the connection
+Server:
+
+Receives the client  request  for file transfer
+ Accept the file name ( for saving the file locally) from the user
+Keep receiving until the last chunk
+Confirm  receiving the file
+Wait for the next client
+Notes:
+Keep the chunk size 'X' constant at 1024 bytes. It is possible to transfer a very large file in one go, but transferring in chunks will help you at this stage.
+
+The server should be able to handle files from multiple clients  (at least two for the demo).
